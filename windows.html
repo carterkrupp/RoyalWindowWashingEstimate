@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Royal Window Washing</title>
+  <style>
+    /* style the calculator form */
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    /* style the input fields and labels */
+    label {
+      display: inline-block;
+      width: 120px;
+      text-align: right;
+      margin: 10px;
+    }
+    
+    input {
+      width: 60px;
+      padding: 5px;
+      margin: 10px;
+      text-align: center;
+    }
+    
+    /* style the calculate button */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    
+    /* style the result */
+    .result {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Royal Window Washing</h1>
+    <label>Number of Upper Windows:</label>
+    <input type="number" id="upper-windows" min="0"><br>
+    <label>Number of Main Level Windows:</label>
+    <input type="number" id="main-windows" min="0"><br>
+    <label>Number of Window Well Windows:</label>
+    <input type="number" id="well-windows" min="0"><br>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <div class="result" id="total-price"></div>
+  </form>
+  
+  <script>
+    function calculate() {
+      // get the values of the input fields
+      var upperWindows = parseInt(document.getElementById("upper-windows").value);
+      var mainWindows = parseInt(document.getElementById("main-windows").value);
+      var wellWindows = parseInt(document.getElementById("well-windows").value);
+      
+      // calculate the total price
+      var totalPrice = (upperWindows * 7) + (mainWindows * 6) + (wellWindows * 5);
+      
+      // display the total price
+      document.getElementById("total-price").innerHTML = "Total Price: $" + totalPrice;
+    }
+  </script>
+</body>
+</html>
